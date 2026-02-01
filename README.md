@@ -1,10 +1,10 @@
 # Achuma Tilimeni – Portfolio Website
 
-Welcome to my personal portfolio website 👋  
+Welcome to my personal portfolio website 👋  (which i am currently working on)
 This website showcases my projects, skills, and experience in software and web development.
 
 ## 👨‍💻 About Me
-I am an ICT graduate with a Diploma in Information Technology (Software Development).
+I am a dedicated software engineer with a Diploma in Information Technology (Software Development).
 I have experience building web applications using C#, ASP.NET Core, SQL Server, and modern front-end technologies.
 
 ## 🛠️ Technologies Used
@@ -30,8 +30,8 @@ I have experience building web applications using C#, ASP.NET Core, SQL Server, 
 
 ## 📫 Contact
 - Email: nangotilimeni@gmail.com
-- GitHub: https://github.com/your-username
-- LinkedIn: (add when ready)
+- GitHub: https://github.com/Achuma88
+
 
 ---
 © 2026 Achuma Tilimeni

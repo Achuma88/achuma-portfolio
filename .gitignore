@@ -1,0 +1,19 @@
+# VS Code
+.vscode/
+
+# OS files
+.DS_Store
+Thumbs.db
+
+# Node
+node_modules/
+
+# .NET
+bin/
+obj/
+
+# Environment files
+.env
+
+# Logs
+*.log

@@ -1,0 +1,243 @@
+/* =========================
+   GLOBAL STYLES
+========================= */
+body {
+    font-family: "Segoe UI", Arial, sans-serif;
+    margin: 0;
+    background: #f5f7fa;
+    color: #333;
+}
+
+header {
+    background: #0b5ed7;
+    color: white;
+    padding: 2.5rem 1rem;
+    text-align: center;
+}
+
+header h1 {
+    margin-bottom: 0.5rem;
+}
+
+nav {
+    background: #ffffff;
+    padding: 1rem;
+    text-align: center;
+    position: sticky;
+    top: 0;
+    z-index: 100;
+}
+
+nav.shadow {
+    box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+}
+
+nav a {
+    margin: 0 15px;
+    text-decoration: none;
+    color: #0b5ed7;
+    font-weight: 600;
+}
+
+section {
+    padding: 2rem 1rem;
+    max-width: 1000px;
+    margin: auto;
+}
+
+/* =========================
+   SKILLS
+========================= */
+.skills {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 12px;
+}
+
+.skills li {
+    background: white;
+    padding: 10px 14px;
+    border-radius: 6px;
+    list-style: none;
+    box-shadow: 0 1px 4px rgba(0,0,0,0.08);
+}
+
+/* =========================
+   PROJECT CARDS
+========================= */
+.project-card {
+    background: white;
+    padding: 1.5rem;
+    margin: 2rem 0;
+    border-radius: 16px;
+    box-shadow: 0 8px 24px rgba(0,0,0,0.08);
+}
+
+.project-card h3 {
+    margin-top: 0;
+}
+
+.project-card a {
+    display: inline-block;
+    margin-top: 12px;
+    color: #0b5ed7;
+    font-weight: 600;
+}
+
+/* =========================
+   IMAGE SLIDER (SHEIN STYLE)
+========================= */
+.image-slider {
+    position: relative;
+    width: 100%;
+    max-width: 750px;
+    height: 380px;
+    margin: 0 auto 1rem;
+    overflow: hidden;
+    border-radius: 14px;
+    background: #f0f0f0;
+}
+
+/* 🔴 IMPORTANT: hide all images */
+.image-slider img {
+    display: none;
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+    cursor: zoom-in;
+}
+
+/* ✅ Only active image shows */
+.image-slider img.active {
+    display: block;
+}
+
+/* =========================
+   SLIDER NAV BUTTONS
+========================= */
+.image-slider button {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    z-index: 20;
+    background: rgba(0,0,0,0.6);
+    color: white;
+    border: none;
+    padding: 12px 15px;
+    font-size: 20px;
+    border-radius: 50%;
+    cursor: pointer;
+    transition: background 0.2s ease;
+}
+
+.image-slider button:hover {
+    background: rgba(0,0,0,0.8);
+}
+
+.image-slider .prev {
+    left: 15px;
+}
+
+.image-slider .next {
+    right: 15px;
+}
+
+/* =========================
+   SLIDER DOTS
+========================= */
+.slider-dots {
+    position: absolute;
+    bottom: 12px;
+    width: 100%;
+    text-align: center;
+    z-index: 15;
+}
+
+.slider-dots span {
+    display: inline-block;
+    width: 9px;
+    height: 9px;
+    margin: 0 5px;
+    background: rgba(255,255,255,0.6);
+    border-radius: 50%;
+    cursor: pointer;
+    transition: background 0.2s ease, transform 0.2s ease;
+}
+
+.slider-dots span.active {
+    background: #0b5ed7;
+    transform: scale(1.3);
+}
+
+/* =========================
+   FULLSCREEN PREVIEW
+========================= */
+.fullscreen-overlay {
+    position: fixed;
+    inset: 0;
+    background: rgba(0,0,0,0.9);
+    display: none;
+    align-items: center;
+    justify-content: center;
+    z-index: 999;
+}
+
+.fullscreen-overlay img {
+    max-width: 90%;
+    max-height: 90%;
+    border-radius: 14px;
+    cursor: zoom-out;
+}
+
+/* =========================
+   FOOTER
+========================= */
+footer {
+    background: #222;
+    color: white;
+    text-align: center;
+    padding: 1.2rem;
+    margin-top: 3rem;
+}
+
+/* =========================
+   RESPONSIVE
+========================= */
+@media (max-width: 768px) {
+    .image-slider {
+        height: 260px;
+    }
+
+    nav a {
+        margin: 0 8px;
+    }
+}
+.project-img {
+    max-height: 420px;
+    object-fit: contain;
+    background: #f5f7fa;
+}
+/* =========================
+   PROJECT INFO UNDER IMAGE
+========================= */
+
+.project-wrapper {
+    max-width: 780px;
+    margin: 2.5rem auto;
+}
+
+.project-info {
+    text-align: center;
+    padding: 1rem 0 0.5rem;
+}
+
+.project-info h3 {
+    margin: 0.6rem 0 0.3rem;
+    font-weight: 700;
+}
+
+.tech-stack {
+    color: #666;
+    font-size: 0.95rem;
+    margin-bottom: 0.8rem;
+}

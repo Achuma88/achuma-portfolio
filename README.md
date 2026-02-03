@@ -1,6 +1,6 @@
 # Achuma Tilimeni – Portfolio Website
 
-Welcome to my personal portfolio website 👋  (which i am currently working on)
+Welcome to my personal portfolio website 👋  
 This website showcases my projects, skills, and experience in software and web development.
 
 ## 👨‍💻 About Me

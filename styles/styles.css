@@ -18,7 +18,29 @@ header {
 header h1 {
     margin-bottom: 0.5rem;
 }
+header p {
+   font-size:26px;
+}
+/* =========================
+   HEADER ROLE ANIMATION
+========================= */
+.dynamic-role {
+    display: inline-block;
+    font-weight: 600;
+    color: #00c2ff;
+    animation: fadeSlide 3s ease-in-out infinite;
+}
 
+@keyframes fadeSlide {
+    0% { opacity: 0; transform: translateY(10px); }
+    20% { opacity: 1; transform: translateY(0); }
+    70% { opacity: 1; transform: translateY(0); }
+    100% { opacity: 0; transform: translateY(-10px); }
+}
+
+/* =========================
+   NAVBAR
+========================= */
 nav {
     background: #ffffff2e;
     padding: 1rem;
@@ -35,13 +57,16 @@ nav.shadow {
 nav a {
     margin: 0 15px;
     text-decoration: none;
-    color:#021635;
+    color: #021635;
     font-weight: 600;
 }
 
+/* =========================
+   SECTIONS
+========================= */
 section {
     padding: 2rem 1rem;
-    max-width: 1000px;
+    max-width: 1100px;
     margin: auto;
 }
 
@@ -63,32 +88,73 @@ section {
 }
 
 /* =========================
-   PROJECT CARDS
+   PROJECTS (INLINE CARDS)
 ========================= */
+.section-title {
+    text-align: center;
+    font-size: 2rem;
+    margin-bottom: 2.5rem;
+    font-weight: 700;
+}
+
+.projects-row {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2rem;
+}
+
+/* CARD */
 .project-card {
     background: white;
-    padding: 1.5rem;
-    margin: 2rem 0;
     border-radius: 16px;
-    box-shadow: 0 8px 24px rgba(0,0,0,0.08);
+    box-shadow: 0 10px 30px rgba(0,0,0,0.12);
+    overflow: hidden;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
-.project-card h3 {
-    margin-top: 0;
+.project-card:hover {
+    transform: translateY(-6px);
+    box-shadow: 0 18px 45px rgba(0,0,0,0.18);
 }
 
-.project-card a {
+.project-card img {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+}
+
+/* CARD CONTENT */
+.project-content {
+    padding: 1.2rem;
+}
+
+.project-content h3 {
+    margin: 0 0 0.4rem;
+    font-size: 1.1rem;
+    font-weight: 700;
+}
+
+.project-content p {
+    font-size: 0.9rem;
+    color: #555;
+}
+
+.project-content a {
     display: inline-block;
-    margin-top: 12px;
-    color:#021635;
+    margin-top: 0.5rem;
     font-weight: 600;
+    color: #00c2ff;
+    text-decoration: none;
+}
+
+.project-content a:hover {
+    text-decoration: underline;
 }
 
 /* =========================
-   IMAGE SLIDER (SHEIN STYLE)
+   IMAGE SLIDER (NO BUTTONS)
 ========================= */
 .image-slider {
-    position: relative;
     width: 100%;
     max-width: 750px;
     height: 380px;
@@ -98,75 +164,18 @@ section {
     background: #f0f0f0;
 }
 
-/* 🔴 IMPORTANT: hide all images */
 .image-slider img {
-    display: none;
     width: 100%;
     height: 100%;
     object-fit: contain;
     cursor: zoom-in;
 }
 
-/* ✅ Only active image shows */
-.image-slider img.active {
-    display: block;
-}
-
-/* =========================
-   SLIDER NAV BUTTONS
-========================= */
-.image-slider button {
-    position: absolute;
-    top: 50%;
-    transform: translateY(-50%);
-    z-index: 20;
-    background: rgba(0,0,0,0.6);
-    color: white;
-    border: none;
-    padding: 12px 15px;
-    font-size: 20px;
-    border-radius: 50%;
-    cursor: pointer;
-    transition: background 0.2s ease;
-}
-
-.image-slider button:hover {
-    background: rgba(0,0,0,0.8);
-}
-
-.image-slider .prev {
-    left: 15px;
-}
-
-.image-slider .next {
-    right: 15px;
-}
-
-/* =========================
-   SLIDER DOTS
-========================= */
-.slider-dots {
-    position: absolute;
-    bottom: 12px;
-    width: 100%;
-    text-align: center;
-    z-index: 15;
-}
-
-.slider-dots span {
-    display: inline-block;
-    width: 9px;
-    height: 9px;
-    margin: 0 5px;
-    background: rgba(255,255,255,0.6);
-    border-radius: 50%;
-    cursor: pointer;
-    transition: background 0.2s ease, transform 0.2s ease;
-}
-
-.slider-dots span.active {
-    background: #021635;
-    transform: scale(1.3);
+/* ❌ REMOVE SLIDER BUTTONS */
+.image-slider button,
+.prev,
+.next {
+    display: none !important;
 }
 
 /* =========================
@@ -204,40 +213,58 @@ footer {
    RESPONSIVE
 ========================= */
 @media (max-width: 768px) {
-    .image-slider {
-        height: 260px;
-    }
-
     nav a {
         margin: 0 8px;
     }
-}
-.project-img {
-    max-height: 420px;
-    object-fit: contain;
-    background: #f5f7fa;
+
+    .image-slider {
+        height: 260px;
+    }
 }
 /* =========================
-   PROJECT INFO UNDER IMAGE
+   DOWNLOAD CV BUTTON
 ========================= */
-
-.project-wrapper {
-    max-width: 780px;
-    margin: 2.5rem auto;
-}
-
-.project-info {
-    text-align: center;
-    padding: 1rem 0 0.5rem;
-}
-
-.project-info h3 {
-    margin: 0.6rem 0 0.3rem;
+.cv-btn {
+    background: #00c2ff;
+    color: #021635 !important;
+    padding: 8px 16px;
+    border-radius: 20px;
     font-weight: 700;
+    margin-left: 20px;
+    text-decoration: none;
+    transition: background 0.3s ease, transform 0.2s ease, box-shadow 0.2s ease;
 }
 
-.tech-stack {
-    color: #171515db;
-    font-size: 0.95rem;
-    margin-bottom: 0.8rem;
+.cv-btn:hover {
+    background: #4fd8ff;
+    transform: translateY(-2px);
+    box-shadow: 0 6px 15px rgba(0, 194, 255, 0.35);
+}
+/* =========================
+   CAREER INTERESTS
+========================= */
+.career-interests {
+    max-width: 600px;
+    margin: 0 auto;
+    padding-left: 0;
+}
+
+.career-interests li {
+    list-style: none;
+    background: white;
+    margin-bottom: 10px;
+    padding: 12px 16px;
+    border-radius: 8px;
+    font-weight: 500;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+    position: relative;
+    padding-left: 40px;
+}
+
+.career-interests li::before {
+    content: "✔";
+    position: absolute;
+    left: 15px;
+    color: #00c2ff;
+    font-weight: bold;
 }

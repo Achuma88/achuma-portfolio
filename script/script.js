@@ -108,3 +108,53 @@ overlay.addEventListener("click", () => {
 });
 
 console.log("Portfolio sliders loaded ✔");
+
+/* =========================
+   HEADER TEXT ROTATION
+========================= */
+const roles = [
+    "Software Developer",
+    "Data Analyst"
+];
+
+const dynamicText = document.querySelector(".dynamic-text");
+
+let roleIndex = 0;
+let charIndex = 0;
+let isDeleting = false;
+
+function typeEffect() {
+    const currentRole = roles[roleIndex];
+
+    if (!isDeleting) {
+        dynamicText.textContent = currentRole.slice(0, charIndex++);
+        if (charIndex > currentRole.length) {
+            setTimeout(() => isDeleting = true, 1200);
+        }
+    } else {
+        dynamicText.textContent = currentRole.slice(0, charIndex--);
+        if (charIndex === 0) {
+            isDeleting = false;
+            roleIndex = (roleIndex + 1) % roles.length;
+        }
+    }
+}
+
+setInterval(typeEffect, 120);
+/* =========================
+   HEADER ROLE ANIMATION
+========================= */
+document.addEventListener("DOMContentLoaded", () => {
+    const roles = [
+        "Software Developer",
+        "Data Analyst"
+    ];
+
+    const roleElement = document.querySelector(".dynamic-role");
+    let index = 0;
+
+    setInterval(() => {
+        index = (index + 1) % roles.length;
+        roleElement.textContent = roles[index];
+    }, 3000);
+});

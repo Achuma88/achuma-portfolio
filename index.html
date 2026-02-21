@@ -13,106 +13,163 @@
 </head>
 <body>
 
-<header>
-    <h1>I'm Achuma Tilimeni</h1>
-    <p>
-        I'm a <span class="dynamic-role">Software Developer</span>
-    </p>
-</header>
+<!-- ===================== -->
+<!-- NAVBAR -->
+<!-- ===================== -->
+<nav class="navbar navbar-expand-lg fixed-top custom-navbar">
+    <div class="container">
+       
 
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+            <span class="navbar-toggler-icon"></span>
+        </button>
 
-
-<nav class="navbar justify-content-center">
-    <a href="#about" class="mx-3">About</a>
-    <a href="#skills" class="mx-3">Skills</a>
-    <a href="#projects" class="mx-3">Projects</a>
-    <a href="#certifications" class="mx-3">Certifications</a>
-    <a href="#contact" class="mx-3">Contact</a>
-    <a href="cv/AchumaTilimeni_CV.pdf" download class="cv-btn">
-    Download CV
-</a>
-
+        <div class="collapse navbar-collapse justify-content-end" id="navbarNav">
+            <ul class="navbar-nav">
+                <li class="nav-item"><a class="nav-link" href="#about">About</a></li>
+                <li class="nav-item"><a class="nav-link" href="#skills">Skills</a></li>
+                <li class="nav-item"><a class="nav-link" href="#projects">Projects</a></li>
+                <li class="nav-item"><a class="nav-link" href="#contact">Contact</a></li>
+                <li class="nav-item">
+                   <a href="cv/AchumaTilimeni_CV.pdf" download class="btn btn-cv ms-3">
+                    Download CV
+                   </a>
+                </li>
+            </ul>
+        </div>
+    </div>
 </nav>
+
+
+<!-- ===================== -->
+<!-- HERO SECTION -->
+<!-- ===================== -->
+<section class="hero-section">
+    <div class="container">
+        <div class="row align-items-center">
+
+            <!-- LEFT SIDE TEXT -->
+            <div class="col-md-6 hero-text">
+                <h5>I'm</h5>
+                <h1>Achuma Tilimeni</h1>
+              <h2 class="role-wrapper">
+                 <span class="role-text active">Software Developer</span>
+                 <span class="role-text"></span>
+              </h2>
+                <div class="hero-buttons mt-4">
+                    <a href="#projects" class="btn btn-light me-3">View Work</a>
+                    <a href="#footer-contact" class="btn btn-outline-light">Contact Me</a>
+                </div>
+            </div>
+
+            <!-- RIGHT SIDE IMAGE -->
+            <div class="col-md-6 text-center">
+                <img src="images/profile.jpg" alt="Achuma" class="hero-img">
+            </div>
+
+        </div>
+    </div>
+</section>
 
 <!-- ===================== -->
 <!-- ABOUT -->
 <!-- ===================== -->
 <section id="about">
-    <h2>About Me</h2>
-    <p>
-        I am a Software Development graduate from Nelson Mandela University.
-        I build web applications using ASP.NET Core, SQL Server, and Dapper,
-        and I also work with Python for data analysis and data science.
-    </p>
-</section>
+    <h2 class="section-title">About Me</h2>
 
+    <div class="about-container">
+
+        <p>
+            I am a detail-oriented Software Developer passionate about building 
+            efficient backend systems and data-driven applications.
+        </p>
+
+        <p>
+            With hands-on experience in <strong>ASP.NET Core, C# and SQL Server</strong>, 
+            I develop secure, scalable, and maintainable web applications that prioritize 
+            performance, clean architecture, and database optimization.
+        </p>
+
+        <p>
+            I also work with <strong>Python (Pandas, NumPy, Matplotlib)</strong> 
+            for data analysis, reporting, and lightweight application development. 
+            I am currently seeking opportunities where I can contribute to 
+            real-world systems while continuing to grow in backend engineering 
+            and data-focused development.
+        </p>
+
+    </div>
+</section>
+<!-- ===================== -->
+<!-- SKILLS -->
+<!-- ===================== -->
 <!-- ===================== -->
 <!-- SKILLS -->
 <!-- ===================== -->
 <section id="skills">
-    <h2>Skills</h2>
-    <ul class="skills">
-        <li>C# / ASP.NET Core</li>
-        <li>SQL Server & Dapper</li>
-        <li>Python (Data Analysis & Data Science)</li>
-        <li>Pandas, NumPy, Matplotlib</li>
-        <li>HTML, CSS, JavaScript</li>
-        <li>Git & GitHub</li>
-    </ul>
+    <h2 class="section-title">Skills</h2>
+
+    <div class="skills-container">
+        <ul class="skills">
+            <li>⚙️ C# / ASP.NET Core</li>
+            <li>🗄️ SQL Server & Dapper</li>
+            <li>🐍 Python (Data Analysis & App Development)</li>
+            <li>📊 Pandas, NumPy, Matplotlib</li>
+            <li>🌐 HTML, CSS, JavaScript</li>
+            <li>🔧 Git & GitHub</li>
+        </ul>
+    </div>
 </section>
 
+<!-- ===================== -->
+<!-- PROJECTS -->
+<!-- ===================== -->
 <!-- ===================== -->
 <!-- PROJECTS -->
 <!-- ===================== -->
 <section id="projects">
     <h2 class="section-title">Latest Projects</h2>
 
-    <div id="projectsCarousel" class="carousel slide" data-bs-ride="false">
-        <div class="carousel-inner">
+    <div class="projects-container">
+        <div class="projects-row">
 
-            <div class="carousel-item active">
-                <div class="projects-row">
+            <!-- Project 1 -->
+            <div class="project-card">
+                <img src="images/Emp1.png" alt="Employee Management System">
+                <div class="project-content">
+                    <h3>Employee Management System</h3>
+                    <p>ASP.NET Core • C# • Dapper • SQL Server</p>
+                    <a href="https://github.com/Achuma88/EmployeeManagementSystem" target="_blank">
+                        View Project →
+                    </a>
+                </div>
+            </div>
 
-                    <div class="project-card">
-                        <img src="images/Emp1.png" alt="Employee Management System">
-                        <div class="project-content">
-                            <h3>Employee Management System</h3>
-                            <p>ASP.NET Core • C# • Dapper • SQL Server</p>
-                            <a href="https://github.com/Achuma88/EmployeeManagementSystem" target="_blank">
-                                View Details →
-                            </a>
-                        </div>
-                    </div>
+            <!-- Project 2 -->
+            <div class="project-card">
+                <img src="images/port1.png" alt="Online Agricultural Farm">
+                <div class="project-content">
+                    <h3>Portfolio Website</h3>
+                    <p>HTML • CSS • JavaScript</p>
+                    <a href="https://github.com/Achuma88/achuma-portfolio" target="_blank">
+                        View Project →
+                    </a>
+                </div>
+            </div>
 
-                    <div class="project-card">
-                        <img src="images/Jiks1.png" alt="Online Agricultural Farm">
-                        <div class="project-content">
-                            <h3>Online Agricultural Farm</h3>
-                            <p>ASP.NET Core • C# • Dapper • SQL Server</p>
-                            <a href="https://github.com/Achuma88/JiksAgri.git" target="_blank">
-                                View Details →
-                            </a>
-                        </div>
-                    </div>
-
-                    <div class="project-card">
-                        <img src="images/Py1.png" alt="Sales Data Analysis">
-                        <div class="project-content">
-                            <h3>Sales Data Analysis</h3>
-                            <p>Python • Pandas • Matplotlib</p>
-                            <a href="https://github.com/Achuma88/data-analysis" target="_blank">
-                                View Details →
-                            </a>
-                        </div>
-                    </div>
-
+            <!-- Project 3 -->
+            <div class="project-card">
+                <img src="images/Py1.png" alt="Sales Data Analysis">
+                <div class="project-content">
+                    <h3>Sales Data Analysis</h3>
+                    <p>Python • Pandas • Matplotlib</p>
+                    <a href="https://github.com/Achuma88/data-analysis" target="_blank">
+                        View Project →
+                    </a>
                 </div>
             </div>
 
         </div>
-
-    
-        
     </div>
 </section>
 
@@ -190,26 +247,44 @@
 <!-- ===================== -->
 <!-- CONTACT -->
 <!-- ===================== -->
-<section id="contact">
-    <h2>Contact</h2>
 
-    <p>Email:
-        <a href="mailto:nangotilimeni@gmail.com">
-            nangotilimeni@gmail.com
-        </a>
-    </p>
 
-    <p>GitHub:
-        <a href="https://github.com/Achuma88" target="_blank">
-            github.com/Achuma88
-        </a>
-    </p>
+<!-- ========================= -->
+<!-- FOOTER CONTACT SECTION -->
+<!-- ========================= -->
+<footer class="footer-contact">
+    <div class="footer-container">
 
-   
-</section>
+        <h2 class="footer-title">Let's Connect</h2>
+        <p class="footer-text">
+            I'm open to opportunities in Backend Development, 
+            Software Engineering, and Data Solutions.
+        </p>
 
-<footer>
-    <p>© 2026 Achuma Tilimeni</p>
+        <div class="footer-socials">
+
+            <!-- WhatsApp -->
+            <a href="https://wa.me/0681584067" target="_blank" class="footer-btn">
+                <i class="bi bi-whatsapp"></i> WhatsApp
+            </a>
+
+            <!-- LinkedIn -->
+            <a href="https:/www.linkedin.com/in/achuma-tilimeni-b892a6268" target="_blank" class="footer-btn">
+                <i class="bi bi-linkedin"></i> LinkedIn
+            </a>
+
+            <!-- Email -->
+            <a href="mailto:nangotilimeni@gmail.com" class="footer-btn-outline">
+                Email Me
+            </a>
+
+        </div>
+
+        <div class="footer-bottom">
+            © Achuma Tilimeni | Built with ASP.NET Core & Passion
+        </div>
+
+    </div>
 </footer>
 <script src="script/script.js"></script>
 <!-- ✅ BOOTSTRAP JS (REQUIRED FOR CAROUSEL) -->

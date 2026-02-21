@@ -2,14 +2,18 @@
    NAVBAR SHADOW
 ========================= */
 window.addEventListener("scroll", () => {
-    document.querySelector("nav")
-        .classList.toggle("shadow", window.scrollY > 50);
+    const nav = document.querySelector("nav");
+    if (nav) {
+        nav.classList.toggle("shadow", window.scrollY > 50);
+    }
 });
+
 
 /* =========================
    IMAGE SLIDER LOGIC
 ========================= */
 document.querySelectorAll(".image-slider").forEach((slider) => {
+
     const images = slider.querySelectorAll("img");
     const prevBtn = slider.querySelector(".prev");
     const nextBtn = slider.querySelector(".next");
@@ -36,20 +40,25 @@ document.querySelectorAll(".image-slider").forEach((slider) => {
         dots.forEach(dot => dot.classList.remove("active"));
 
         currentIndex = (index + images.length) % images.length;
+
         images[currentIndex].classList.add("active");
         dots[currentIndex].classList.add("active");
     }
 
     /* ---------- BUTTON EVENTS ---------- */
-    prevBtn.addEventListener("click", () => {
-        showSlide(currentIndex - 1);
-        resetAutoSlide();
-    });
+    if (prevBtn) {
+        prevBtn.addEventListener("click", () => {
+            showSlide(currentIndex - 1);
+            resetAutoSlide();
+        });
+    }
 
-    nextBtn.addEventListener("click", () => {
-        showSlide(currentIndex + 1);
-        resetAutoSlide();
-    });
+    if (nextBtn) {
+        nextBtn.addEventListener("click", () => {
+            showSlide(currentIndex + 1);
+            resetAutoSlide();
+        });
+    }
 
     /* ---------- AUTO SLIDE ---------- */
     function startAutoSlide() {
@@ -90,6 +99,7 @@ document.querySelectorAll(".image-slider").forEach((slider) => {
     startAutoSlide();
 });
 
+
 /* =========================
    FULLSCREEN OVERLAY
 ========================= */
@@ -107,54 +117,34 @@ overlay.addEventListener("click", () => {
     overlay.style.display = "none";
 });
 
-console.log("Portfolio sliders loaded ✔");
 
 /* =========================
-   HEADER TEXT ROTATION
-========================= */
-const roles = [
-    "Software Developer",
-    "Data Analyst"
-];
-
-const dynamicText = document.querySelector(".dynamic-text");
-
-let roleIndex = 0;
-let charIndex = 0;
-let isDeleting = false;
-
-function typeEffect() {
-    const currentRole = roles[roleIndex];
-
-    if (!isDeleting) {
-        dynamicText.textContent = currentRole.slice(0, charIndex++);
-        if (charIndex > currentRole.length) {
-            setTimeout(() => isDeleting = true, 1200);
-        }
-    } else {
-        dynamicText.textContent = currentRole.slice(0, charIndex--);
-        if (charIndex === 0) {
-            isDeleting = false;
-            roleIndex = (roleIndex + 1) % roles.length;
-        }
-    }
-}
-
-setInterval(typeEffect, 120);
-/* =========================
-   HEADER ROLE ANIMATION
+   SMOOTH HEADER ROLE FADE
 ========================= */
 document.addEventListener("DOMContentLoaded", () => {
+
     const roles = [
         "Software Developer",
         "Data Analyst"
     ];
 
-    const roleElement = document.querySelector(".dynamic-role");
+    const roleTexts = document.querySelectorAll(".role-text");
+
     let index = 0;
+    let active = 0;
 
     setInterval(() => {
+        const next = active === 0 ? 1 : 0;
+
         index = (index + 1) % roles.length;
-        roleElement.textContent = roles[index];
-    }, 3000);
+
+        roleTexts[next].textContent = roles[index];
+        roleTexts[next].classList.add("active");
+        roleTexts[active].classList.remove("active");
+
+        active = next;
+
+    }, 2700);
 });
+
+console.log("Portfolio loaded successfully ✔");

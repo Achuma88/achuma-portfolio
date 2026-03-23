@@ -552,3 +552,12 @@ section {
     opacity: 1;
     transform: translateY(0);
 }
+.footer-bottom i {
+  margin: 0 6px;
+  transition: 0.3s;
+}
+
+.footer-bottom i:hover {
+  color: #ffcc00;
+  transform: scale(1.2);
+}

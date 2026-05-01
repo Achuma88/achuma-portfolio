@@ -71,7 +71,17 @@ section {
 .custom-navbar .nav-link:hover {
     color: #00c2ff !important;
 }
+/* Default navbar (transparent) */
+.custom-navbar {
+  background: transparent;
+  transition: all 0.3s ease;
+}
 
+/* Navbar when scrolling */
+.custom-navbar.scrolled {
+  background: #6b7bab; /* your theme color */
+  box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+}
 /* =========================
    HERO SECTION
 ========================= */
@@ -560,4 +570,40 @@ section {
 .footer-bottom i:hover {
   color: #ffcc00;
   transform: scale(1.2);
+}
+
+/* SCROLL ANIMATION */
+.reveal {
+  opacity: 0;
+  transform: translateY(50px);
+  transition: all 0.8s ease;
+}
+
+.reveal.active {
+  opacity: 1;
+  transform: translateY(0);
+}
+/* BACK TO TOP BUTTON */
+#topBtn {
+  position: fixed;
+  bottom: 30px;
+  right: 30px;
+  z-index: 999;
+  display: none;
+
+  background: #a0add4;
+  color: #0b028b;
+  border: none;
+  border-radius: 50%;
+  padding: 12px 15px;
+  font-size: 18px;
+  cursor: pointer;
+
+  box-shadow: 0 4px 10px rgba(0,0,0,0.3);
+  transition: all 0.3s ease;
+}
+
+#topBtn:hover {
+  background: #8da0d8;
+  transform: translateY(-3px);
 }

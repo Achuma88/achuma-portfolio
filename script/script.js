@@ -148,3 +148,74 @@ document.addEventListener("DOMContentLoaded", () => {
 });
 
 console.log("Portfolio loaded successfully ✔");
+
+/* =========================
+   SCROLL ANIMATION (AUTO)
+========================= */
+
+// target your EXISTING sections (no class changes)
+const elementsToAnimate = document.querySelectorAll(
+  ".hero-section, #about, #skills, #projects, #certifications, #career-interests, .footer-contact"
+);
+
+// add animation class automatically
+elementsToAnimate.forEach(el => el.classList.add("reveal"));
+
+const observer = new IntersectionObserver(entries => {
+  entries.forEach(entry => {
+    if (entry.isIntersecting) {
+      entry.target.classList.add("active");
+    }
+  });
+}, { threshold: 0.2 });
+
+// observe all elements
+elementsToAnimate.forEach(el => observer.observe(el));
+
+/* STAGGER CARD ANIMATION */
+const cards = document.querySelectorAll(".project-card");
+
+cards.forEach((card, index) => {
+  card.classList.add("reveal");
+  card.style.transitionDelay = `${index * 0.15}s`;
+  observer.observe(card);
+});
+
+document.querySelectorAll(".skills li").forEach((item, i) => {
+  item.classList.add("reveal");
+  item.style.transitionDelay = `${i * 0.1}s`;
+  observer.observe(item);
+});
+
+window.addEventListener("scroll", () => {
+  const navbar = document.querySelector(".custom-navbar");
+
+  if (window.scrollY > 50) {
+    navbar.classList.add("scrolled");
+  } else {
+    navbar.classList.remove("scrolled");
+  }
+});
+
+document.addEventListener("DOMContentLoaded", () => {
+
+  const topBtn = document.getElementById("topBtn");
+
+  if (!topBtn) return; // safety check
+
+  window.addEventListener("scroll", () => {
+    if (window.scrollY > 200) {
+      topBtn.style.display = "flex";
+    } else {
+      topBtn.style.display = "none";
+    }
+  });
+
+  topBtn.addEventListener("click", () => {
+    window.scrollTo({
+      top: 0,
+      behavior: "smooth"
+    });
+  });
+
+});

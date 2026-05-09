@@ -41,8 +41,130 @@
         </div>
     </div>
 </nav>
+<!-- ===================== -->
+<!-- NAVBAR -->
+<!-- ===================== -->
 
 
+<!-- ===================== -->
+<!-- MOBILE SIDEBAR -->
+<!-- ===================== -->
+
+<!-- ===================== -->
+<!-- MODERN MOBILE SIDEBAR -->
+<!-- ===================== -->
+
+<div class="sidebar" id="sidebar">
+
+    <!-- TOP -->
+    <div class="sidebar-top">
+
+        <div class="sidebar-profile">
+
+            <img src="images/profile.jpg" alt="Achuma">
+
+            <div>
+                <h3>Achuma Tilimeni</h3>
+                <p>Software Developer</p>
+            </div>
+
+        </div>
+
+        <!-- CLOSE BUTTON -->
+        <button id="closeSidebar" class="close-sidebar">
+            <i class="fas fa-times"></i>
+        </button>
+
+    </div>
+
+    <!-- DIVIDER -->
+    <div class="sidebar-divider"></div>
+
+    <!-- NAV LINKS -->
+    <ul class="sidebar-links">
+
+        <li>
+            <a href="#about">
+                <i class="fas fa-user"></i>
+                <span>About</span>
+            </a>
+        </li>
+
+        <li>
+            <a href="#skills">
+                <i class="fas fa-code"></i>
+                <span>Skills</span>
+            </a>
+        </li>
+
+        <li>
+            <a href="#projects">
+                <i class="fas fa-laptop-code"></i>
+                <span>Projects</span>
+            </a>
+        </li>
+
+        <li>
+            <a href="#certifications">
+                <i class="fas fa-certificate"></i>
+                <span>Certifications</span>
+            </a>
+        </li>
+
+        <li>
+            <a href="#career-interests">
+                <i class="fas fa-briefcase"></i>
+                <span>Career Interests</span>
+            </a>
+        </li>
+
+        <li>
+            <a href="#footer-contact">
+                <i class="fas fa-envelope"></i>
+                <span>Contact</span>
+            </a>
+        </li>
+
+    </ul>
+
+    <!-- BOTTOM SECTION -->
+    <div class="sidebar-bottom">
+
+        <a href="cv/AchumaTilimeni_CV.pdf"
+           download
+           class="sidebar-cv-btn">
+
+            <i class="fas fa-download"></i>
+            Download CV
+
+        </a>
+
+        <!-- SOCIALS -->
+        <div class="sidebar-socials">
+
+            <a href="https://github.com/Achuma88" target="_blank">
+                <i class="fab fa-github"></i>
+            </a>
+
+            <a href="https://www.linkedin.com/in/achuma-tilimeni-b892a6268"
+               target="_blank">
+
+                <i class="fab fa-linkedin"></i>
+
+            </a>
+
+            <a href="mailto:nangotilimeni@gmail.com">
+                <i class="fas fa-envelope"></i>
+            </a>
+
+        </div>
+
+    </div>
+
+</div>
+
+<!-- OVERLAY -->
+<div class="sidebar-overlay" id="sidebarOverlay"></div>
 <!-- ===================== -->
 <!-- HERO SECTION -->
 <!-- ===================== -->
@@ -287,11 +409,53 @@
 
     </div>
 </footer>
-<script src="script/script.js"></script>
-<!-- ✅ BOOTSTRAP JS (REQUIRED FOR CAROUSEL) -->
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+
  <button id="topBtn">
   <i class="fas fa-arrow-up"></i>
 </button>
+<!-- ========================= -->
+<!-- AI CHATBOT -->
+<!-- ========================= -->
+<div class="chatbot-container">
+
+  <!-- Chat Toggle Button -->
+  <button id="chatToggle">
+    <i class="fas fa-comments"></i>
+  </button>
+
+  <!-- Chat Window -->
+  <div class="chat-window" id="chatWindow">
+
+    <div class="chat-header">
+      <h4>Get to know Achuma</h4>
+      <span id="closeChat">&times;</span>
+    </div>
+
+    <div class="chat-body" id="chatBody">
+      <div class="bot-message">
+        👋 Hi! I'm Achuma's AI assistant.<br><br>
+        Ask me about:
+        <ul>
+          <li>Skills</li>
+          <li>Projects</li>
+          <li>Experience</li>
+          <li>Certifications</li>
+          <li>Contact Info</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="chat-input-area">
+      <input type="text" id="userInput" placeholder="Ask something..." />
+      <button id="sendBtn">
+        <i class="fas fa-paper-plane"></i>
+      </button>
+    </div>
+
+  </div>
+</div>
+<script src="script/script.js"></script>
+<!-- ✅ BOOTSTRAP JS (REQUIRED FOR CAROUSEL) -->
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
 </body>
 </html>

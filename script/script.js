@@ -219,3 +219,177 @@ document.addEventListener("DOMContentLoaded", () => {
   });
 
 });
+/* =========================
+   AI CHATBOT
+========================= */
+
+const chatToggle = document.getElementById("chatToggle");
+const chatWindow = document.getElementById("chatWindow");
+const closeChat = document.getElementById("closeChat");
+
+const sendBtn = document.getElementById("sendBtn");
+const userInput = document.getElementById("userInput");
+const chatBody = document.getElementById("chatBody");
+
+/* OPEN/CLOSE CHAT */
+chatToggle.addEventListener("click", () => {
+  chatWindow.style.display = "flex";
+});
+
+closeChat.addEventListener("click", () => {
+  chatWindow.style.display = "none";
+});
+
+/* SEND MESSAGE */
+sendBtn.addEventListener("click", sendMessage);
+
+userInput.addEventListener("keypress", (e) => {
+  if (e.key === "Enter") {
+    sendMessage();
+  }
+});
+
+function sendMessage() {
+
+  const message = userInput.value.trim();
+
+  if (message === "") return;
+
+  addMessage(message, "user");
+
+  userInput.value = "";
+
+  setTimeout(() => {
+    botReply(message);
+  }, 500);
+}
+
+/* ADD MESSAGE TO CHAT */
+function addMessage(text, sender) {
+
+  const msg = document.createElement("div");
+
+  msg.classList.add(
+    sender === "user"
+      ? "user-message"
+      : "bot-message"
+  );
+
+  msg.innerHTML = text;
+
+  chatBody.appendChild(msg);
+
+  chatBody.scrollTop = chatBody.scrollHeight;
+}
+
+/* SIMPLE AI RESPONSES */
+function botReply(message) {
+
+  const msg = message.toLowerCase();
+
+  let response = `
+    I'm not sure about that yet.<br><br>
+    Try asking about:
+    <ul>
+      <li>skills</li>
+      <li>projects</li>
+      <li>experience</li>
+      <li>contact</li>
+      <li>certifications</li>
+    </ul>
+  `;
+
+  if (msg.includes("skills")) {
+    response = `
+      Achuma specializes in:
+      <ul>
+        <li>ASP.NET Core & C#</li>
+        <li>SQL Server & Dapper</li>
+        <li>Python Data Analysis</li>
+        <li>HTML, CSS & JavaScript</li>
+      </ul>
+    `;
+  }
+
+  else if (msg.includes("project"||"projects")) {
+    response = `
+      Featured projects include:
+      <ul>
+        <li>Employee Management System</li>
+        <li>Portfolio Website</li>
+        <li>Sales Data Analysis</li>
+      </ul>
+    `;
+  }
+  
+
+  else if (
+    msg.includes("contact") ||
+    msg.includes("email")
+  ) {
+    response = `
+      📧 Email: nangotilimeni@gmail.com
+      <br><br>
+      💼 LinkedIn available in the footer section.
+    `;
+  }
+
+  else if (
+    msg.includes("experience") ||
+    msg.includes("about")
+  ) {
+    response = `
+      Achuma is a Software Developer focused on backend systems,
+      data-driven applications, and scalable web development.
+    `;
+  }
+
+  else if (
+    msg.includes("certificate") ||
+    msg.includes("certification")
+  ) {
+    response = `
+      Certifications:
+      <ul>
+        <li>FNB App Academy</li>
+        <li>Cisco Introduction to Cybersecurity</li>
+      </ul>
+    `;
+  }
+
+  addMessage(response, "bot");
+}
+
+const menuBtn = document.getElementById("menuBtn");
+const sidebar = document.getElementById("sidebar");
+const closeSidebar = document.getElementById("closeSidebar");
+const sidebarOverlay = document.getElementById("sidebarOverlay");
+
+/* OPEN SIDEBAR */
+menuBtn.addEventListener("click", () => {
+    sidebar.classList.add("active");
+    sidebarOverlay.classList.add("active");
+});
+
+/* CLOSE SIDEBAR BUTTON */
+closeSidebar.addEventListener("click", () => {
+    closeMenu();
+});
+
+/* CLICK OUTSIDE SIDEBAR */
+sidebarOverlay.addEventListener("click", () => {
+    closeMenu();
+});
+
+/* CLOSE WHEN LINK CLICKED */
+document.querySelectorAll(".sidebar-links a").forEach(link => {
+    link.addEventListener("click", () => {
+        closeMenu();
+    });
+});
+
+/* FUNCTION */
+function closeMenu() {
+    sidebar.classList.remove("active");
+    sidebarOverlay.classList.remove("active");
+}
